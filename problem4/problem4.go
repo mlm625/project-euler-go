@@ -27,10 +27,12 @@ func isPalindrome(num int) bool {
 
 func Solve() int {
 	lpd := 0
-	for i := 999; i >= 500; i-- {
-		for j := i; j >= 500; j-- {
+	for i := 999; i >= 100; i-- {
+		// eliminate duplication by setting j to i.
+		for j := i; j >= 100; j-- {
 			prod := i * j
-			if isPalindrome(prod) && lpd < prod {
+			// no need to check for a palindrome unless the current prod is greater
+			if lpd < prod && isPalindrome(prod) {
 				lpd = prod
 			}
 		}
