@@ -17,14 +17,15 @@ import "fmt"
 
 const LIMIT = 4000000
 
-func fib(x int, y int) (int, int) {
+// fibonacci takes two terms of the sequence and generates the next term.
+func fibonacci(x int, y int) (int, int) {
 	return y, x + y
 }
 
 func Solve() int {
 	sum := 0
 
-	for fibX,fibY :=1, 2; fibY < LIMIT; fibX,fibY = fib(fibX, fibY) {
+	for fibX,fibY :=1, 2; fibY < LIMIT; fibX,fibY = fibonacci(fibX, fibY) {
 		if fibY % 2 == 0 {
 			sum += fibY
 		}
