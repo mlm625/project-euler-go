@@ -32,6 +32,7 @@ func Solve() int {
 		}
 	}
 
+	// more efficient to iterate over half of the matrix then multiply by 2
 	return diff*2
 }
 
